@@ -79,6 +79,12 @@
               <span>Donated People</span>
             </a>
           </li>
+          <li>
+            <a href="Search.php">
+              <i class="fa fa-search"></i>
+              <span>Search People</span>
+            </a>
+          </li>
         </ul>
       </div>
       <!-- sidebar-menu  -->

@@ -25,6 +25,7 @@
             <th>Full Name</th>
             <th>Address</th>
             <th>Phone Number</th>
+            <th>ZIP</th>
             
         </tr>
     </thead>
@@ -45,7 +46,7 @@
     die("Connection failed: " . $conn->connect_error);
 }
   
-   $sql = 'SELECT main.id, main.cnic, main.fname,main.addres,main.phone FROM helpseeker AS main , helpseekerAndrashanRelation AS second WHERE  main.cnic=second.cnic AND second.statuss=0';
+   $sql = 'SELECT main.id, main.cnic, main.fname,main.addres,main.phone,main.ZIP FROM helpseeker AS main , helpseekerAndrashanRelation AS second WHERE  main.cnic=second.cnic AND second.statuss=0';
 
    $result = $conn->query($sql);
    
@@ -65,6 +66,7 @@
                 <td><?php echo $row["fname"] ?></td>
                 <td><?php echo $row["addres"] ?></td>
                 <td><?php echo $row["phone"] ?></td>
+                <td><?php echo $row["zip"] ?></td>
      </tr>
      
 <?php
