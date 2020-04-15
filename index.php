@@ -1,11 +1,26 @@
 <?php
-	if (!empty($_SERVER['HTTPS']) && ('on' == $_SERVER['HTTPS'])) {
-		$uri = 'https://';
-	} else {
-		$uri = 'http://';
-	}
-	$uri .= $_SERVER['HTTP_HOST'];
-	header('Location: '.$uri.'/dashboard/');
-	exit;
+include "headerfiles/indexheader.php"
 ?>
-Something is wrong with the XAMPP installation :-(
+<body>
+<div class="page-wrapper chiller-theme toggled">
+  <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+    <i class="fas fa-bars"></i>
+  </a>
+   <!-- sidebar  -->
+ <?php include "sidebar/sidebar.php"?>
+ 
+  <main class="page-content">
+    <div class="container-fluid">
+      
+  <!--main content-->
+<?php include "body/indexBody.php"?>
+    </div>
+
+  </main>
+  <!-- page-content" -->
+</div>
+<!-- Footer -->
+ <?php include "footerfiles/indexfooter.php"?>
+</body>
+
+</html>
