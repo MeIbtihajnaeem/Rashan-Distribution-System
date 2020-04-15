@@ -16,8 +16,10 @@
       <br>
       <label for="Address"><b>Contact Number</b></label>
       <input type="text" placeholder="0300-0000000" name="phonenum" required>
-      <hr>
       <br>
+      <label for="zip"><b>Zip</b></label>
+      <input type="text" placeholder="Enter Zip Code" name="zip" required>
+   
       <button type="submit" class="registerbtn">Add Seeker</button>
     </div>
   

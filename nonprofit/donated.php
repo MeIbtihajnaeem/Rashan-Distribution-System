@@ -20,7 +20,7 @@ if(isset($_POST['checkbox'])){
   $result = $result["quantity"];
     if (is_array($_POST['checkbox'])) {
       foreach($_POST['checkbox'] as $value){
-        $sql = "UPDATE helpseekerAndrashanRelation SET statuss='$boolValue' WHERE cnic='$value'";
+        $sql = "UPDATE helpseekerAndrashanRelation SET statuss='$boolValue', dates='$currentDate' WHERE cnic='$value'";
         $conn->query($sql);
         $result = $result-1;
       

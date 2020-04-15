@@ -6,6 +6,7 @@ $dbname = "orgdata";
 $cnic = $_POST["cnics"];
 $name = $_POST["fullname"];
 $address=$_POST["add"];
+$zip=$_POST["zip"];
 $phone = $_POST["phonenum"];
 $boolValue = 0;
 // Create connection
@@ -15,8 +16,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "INSERT INTO helpseeker (cnic,fname,addres,phone)
-VALUES ('$cnic', '$name', '$address','$phone')";
+$sql = "INSERT INTO helpseeker (cnic,fname,addres,phone,zip)
+VALUES ('$cnic', '$name', '$address','$phone','$zip')";
 
 $relation = "INSERT INTO helpseekerAndrashanRelation (cnic,statuss)
 VALUES ('$cnic', '$boolValue')";

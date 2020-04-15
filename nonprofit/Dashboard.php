@@ -33,7 +33,7 @@
               
               <div class="card-body text-center">
                   <h6 class="card-title">Remaining Help Seekers</h6>
-                  <a href="#" class="btn btn-primary btn-sm">View Remaining</a>
+                  <a href="remainingHelpSeekers.php" class="btn btn-primary btn-sm">View Remaining</a>
                 
               </div>
             </div>   
@@ -44,7 +44,7 @@
               
               <div class="card-body text-center">
                   <h6 class="card-title">Remaining Rashan Bags</h6>
-                  <a href="#" class="btn btn-primary btn-sm">View Remaining</a>
+                  <a href="remainingRashanBag.php" class="btn btn-primary btn-sm">View Remaining</a>
                 
               </div>
             </div>   

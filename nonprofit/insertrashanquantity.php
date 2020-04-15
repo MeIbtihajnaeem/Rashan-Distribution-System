@@ -12,9 +12,9 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 $sql = "INSERT INTO rashan (dates,quantity) VALUES('$dates','$quantity')";
+$log = "INSERT INTO Orders (dates,quantity) VALUES('$dates','$quantity')";
 
-
-if ($conn->query($sql) === TRUE) {
+if ($conn->query($sql) === TRUE && $conn->query($log)===TRUE) {
 
     header('Location: rashanbag.php');
     exit();

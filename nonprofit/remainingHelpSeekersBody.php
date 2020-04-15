@@ -1,4 +1,5 @@
-
+<h2>Remaining Help Seekers</h2>
+<hr>
     <div class="row col-md-6 col-md-offset-2 custyle">
     <table class="table table-striped custab">
     <thead>
@@ -51,8 +52,6 @@
 $id = $id+1;
     }
 }
-
-echo "Fetched data successfully\n";
 $conn->close();
 ?>
    </table>

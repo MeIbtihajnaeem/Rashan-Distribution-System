@@ -1,3 +1,19 @@
+<h2>Select People to Donate</h2>
+      <hr>
+    
+    
+
+        
+        <div class="card rounded-0 p-0 shadow-sm" style="border-color:red;">
+          
+          <div class="card-body text-center" >
+          <h2>Current Date <?php echo dateRetrunFunction()?></h2>
+          <p>Rashan Bags Available <?php echo quantityRetrunFunction()?></p>
+            
+          </div>
+        
+               
+      </div>
 
     <div class="row col-md-6 col-md-offset-2 custyle">
     <table class="table table-striped custab">
@@ -14,19 +30,21 @@
     </thead>
     <form action="donated.php" method="POST">
 <?php
+ $boolValue = 0;
+ $id = 1;
+ $currentDate = date("Y-m-d");
  $servername = "localhost";
  $username = "root";
  $password = "";
  $dbname = "orgdata";
- $boolValue = 0;
- $id = 1;
+ 
  // Create connection
  $conn = new mysqli($servername, $username, $password,$dbname);
    
  if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-   
+  
    $sql = 'SELECT main.id, main.cnic, main.fname,main.addres,main.phone FROM helpseeker AS main , helpseekerAndrashanRelation AS second WHERE  main.cnic=second.cnic AND second.statuss=0';
 
    $result = $conn->query($sql);
@@ -54,8 +72,37 @@ $id = $id+1;
     }
 }
 
-echo "Fetched data successfully\n";
+//echo "Fetched data successfully\n";
 $conn->close();
+
+function dateRetrunFunction(){
+    $currentDate = date("Y-m-d");
+    $quantityQuery = "SELECT dates,quantity from rashan WHERE dates= '$currentDate'";
+    $conn = connection();
+    $response = $conn->query($quantityQuery);
+    $response = $response->fetch_assoc();
+    return $response["dates"];
+}
+
+function quantityRetrunFunction(){
+    $currentDate = date("Y-m-d");
+    $quantityQuery = "SELECT dates,quantity from rashan WHERE dates= '$currentDate'";
+    $conn = connection();
+    $response = $conn->query($quantityQuery);
+    $response = $response->fetch_assoc();
+    return $response["quantity"];
+}
+function connection(){
+    
+    $servername = "localhost";
+ $username = "root";
+ $password = "";
+ $dbname = "orgdata";
+ 
+ // Create connection
+ $conn = new mysqli($servername, $username, $password,$dbname);
+ return $conn;
+}
 ?>
    </table>
    <button type="submit" class="registerbtn">Donate</button>

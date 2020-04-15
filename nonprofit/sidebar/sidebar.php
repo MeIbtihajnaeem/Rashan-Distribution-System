@@ -74,9 +74,9 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="History.php">
               <i class="fa fa-folder"></i>
-              <span>Summary</span>
+              <span>Donated People</span>
             </a>
           </li>
         </ul>
