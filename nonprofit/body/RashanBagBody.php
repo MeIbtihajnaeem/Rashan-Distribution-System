@@ -1,4 +1,4 @@
-<h2>Remaining Help Seekers</h2>
+<h2>Remaining Rashan Bags</h2>
 <hr>
     <div class="row col-md-6 col-md-offset-2 custyle">
     <table class="table table-striped custab">
@@ -6,20 +6,16 @@
    
         <tr>
             <th>SNo</th>
-            <th>Cnic</th>
-            <th>Full Name</th>
-            <th>Address</th>
-            <th>Phone Number</th>
-            
+            <th>Date</th>
+            <th>Remaining Bags</th>
+            <th>Out Of</th>
         </tr>
     </thead>
-    <form action="donated.php" method="POST">
 <?php
  $servername = "localhost";
  $username = "root";
  $password = "";
  $dbname = "orgdata";
- $boolValue = 0;
  $id = 1;
  // Create connection
  $conn = new mysqli($servername, $username, $password,$dbname);
@@ -28,8 +24,7 @@
     die("Connection failed: " . $conn->connect_error);
 }
    
-   $sql = 'SELECT main.id, main.cnic, main.fname,main.addres,main.phone FROM helpseeker AS main , helpseekerAndrashanRelation AS second WHERE  main.cnic=second.cnic AND second.statuss=0';
-
+   $sql = 'SELECT rash.dates AS dt, rash.quantity AS qt, ord.quantity AS quant FROM rashan AS rash , Orders AS ord  WHERE rash.dates=ord.dates';
    $result = $conn->query($sql);
    
    if(! $result ) {
@@ -42,20 +37,18 @@
        ?>
     <tr>
                 <td><span><?php echo $id ?></span></td>
-                <td><?php echo $row["cnic"] ?></td>
-                <td><?php echo $row["fname"] ?></td>
-                <td><?php echo $row["addres"] ?></td>
-                <td><?php echo $row["phone"] ?></td>
+                <td><?php echo $row["dt"] ?></td>
+                <td><?php echo $row["qt"] ?></td>
+                <td><?php echo $row["quant"] ?></td>
      </tr>
      
 <?php
 $id = $id+1;
     }
 }
+
 $conn->close();
 ?>
    </table>
-   <button type="submit" class="registerbtn">Donate</button>
-   </form>
 
     </div>

@@ -14,7 +14,7 @@ include "headerfiles/helpseekerheader.php"
       
   <!--main content-->
 
-<?php include "addhelpseeker.php"?>
+<?php include "body/addhelpseekerBody.php"?>
     </div>
 
   </main>

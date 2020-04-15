@@ -13,7 +13,7 @@ include "headerfiles/donateHead.php"
     <div class="container-fluid">
       
   <!--main content-->
-<?php include "donateBody.php"?>
+<?php include "body/donateBody.php"?>
     </div>
 
   </main>

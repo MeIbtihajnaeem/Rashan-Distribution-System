@@ -13,7 +13,7 @@ include "headerfiles/helpseekerheader.php"
     <div class="container-fluid">
       
   <!--main content-->
-<?php include "addrashanbag.php"?>
+<?php include "body/addrashanbagBody.php"?>
     </div>
 
   </main>

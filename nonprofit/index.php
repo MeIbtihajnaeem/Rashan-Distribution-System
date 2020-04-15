@@ -13,7 +13,7 @@ include "headerfiles/indexheader.php"
     <div class="container-fluid">
       
   <!--main content-->
-<?php include "Dashboard.php"?>
+<?php include "body/indexBody.php"?>
     </div>
 
   </main>

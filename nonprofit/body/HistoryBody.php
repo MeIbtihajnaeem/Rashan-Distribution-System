@@ -13,7 +13,7 @@
             
         </tr>
     </thead>
-    <form action="donated.php" method="POST">
+    <form action="donate.php" method="POST">
 <?php
  $servername = "localhost";
  $username = "root";

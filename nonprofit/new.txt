@@ -1,5 +1,0 @@
-sudo chmod 777 -R /opt/lampp/htdocs
-
-sudo /opt/lampp/lampp start
-
-sudo /opt/lampp/lampp stop
